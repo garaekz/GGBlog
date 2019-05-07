@@ -1,0 +1,32 @@
+nav .nav-header {
+	text-align: center;
+    clear: both;
+    padding: 40px 0;
+}
+.brand-logo img{
+    height: 1.5em;
+    margin: 10px 0 0 10px;
+}
+.nav-header h1{
+	font-family: 'Lato', sans-serif;
+	font-weight: 900;
+	margin: 2rem 0 1.5rem 0;
+}
+.subhead{
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 100;
+	margin: -15px 0 40px 0;
+}
+.blog-wrapper {
+    width: 70%;
+    margin: 0 auto;
+}
+#referencia{
+	text-align: center;
+}
+iframe {
+    width: 40vw; 
+    height: 22.5vw;
+    min-width: 385px;
+    min-height: 216.5px;
+}

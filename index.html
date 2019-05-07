@@ -1,0 +1,63 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>G-Global | Blog</title>
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,900|Montserrat:100,400" rel="stylesheet">
+	<!-- CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<link rel="stylesheet" href="assets/css/custom.css">
+</head>
+<body ng-app="gApp" ng-controller="gCtrl">
+	<nav class="nav-extended blue darken-2">
+		<div class="nav-wrapper">
+			<a href="#" class="brand-logo">
+				<img src="https://g-global.com.mx/assets/imgs/logos/gg.svg" alt="">
+			</a>
+		</div>
+		<div class="nav-content">
+			<div class="nav-header">
+				<h1>BLOG</h1>
+				<div class="subhead">
+					Un blog para G-Global by David Garay
+				</div>
+			</div>
+			<ul class="tabs tabs-transparent">
+				<li class="tab"><a href="#test1">Test 1</a></li>
+				<li class="tab"><a class="active" href="#test2">Test 2</a></li>
+				<li class="tab disabled"><a href="#test3">Disabled Tab</a></li>
+				<li class="tab"><a href="#test4">Test 4</a></li>
+			</ul>
+		</div>
+	</nav>
+	<div class="blog">
+		<div class="blog-wrapper">
+			<div class="row">
+				<div class="col s12 m6 l4" ng-repeat="(k, v) in dataset  | filter:{status:'publicada', borrada: 0}">
+					<a href="javascript:void(0);" ng-click="openModal(v.post_url)" target="_blank" class="nav-link">
+						<div class="card">
+							<div class="card-image">
+								<img ng-src="https://via.placeholder.com/300/09f/FFFFFF/.png?text=G-Global">
+								<span class="card-title">{{v.noticia}}</span>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="modal" class="modal modal-fixed-footer">
+		<div class="modal-content">
+			<h4>{{selected.noticia}}</h4>
+			<div ng-if="selected.contenido != ''" ng-bind-html="selected.contenido | unsafe"></div>
+			<div id="referencia" ng-if="selected.referencia != ''" ng-bind-html="selected.referencia | unsafe"></div>
+		</div>
+		<div class="modal-footer">
+			<a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
+		</div>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+	<script src="assets/js/app.js"></script>
+</body>
+</html>
